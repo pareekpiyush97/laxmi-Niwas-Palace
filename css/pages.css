@@ -1,0 +1,58 @@
+/* ============================================================
+   PAGE-SPECIFIC PATTERNS (loaded after style.css)
+   ============================================================ */
+
+/* ---------------- GALLERY: filters ---------------- */
+.gallery-filters{ display:flex; flex-wrap:wrap; gap:.7rem; margin-bottom:var(--sp-4); }
+.gallery-filters button{
+  font-family:var(--font-struct); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:.6em 1.3em; border:1px solid var(--line-dark); color:var(--text-ondark-muted);
+  transition:all .3s, transform .2s var(--ease);
+}
+.gallery-filters button:hover{ border-color:var(--gold); color:var(--white); transform:translateY(-2px); }
+.gallery-filters button:active{ transform:scale(.95); }
+.gallery-filters button.is-active{ background:var(--gold); border-color:var(--gold); color:var(--black); }
+
+/* ---------------- DINING: menu tabs ---------------- */
+.menu-tabs{ display:flex; gap:2rem; flex-wrap:wrap; margin-bottom:var(--sp-4); border-bottom:1px solid var(--line-light); padding-bottom:1rem; }
+.menu-tabs button{ font-family:var(--font-struct); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gray); position:relative; padding-bottom:.5rem; }
+.menu-tabs button::after{ content:''; position:absolute; left:0; bottom:-1.05rem; height:1px; width:100%; background:var(--gold); transform:scaleX(0); transition:transform .35s; }
+.menu-tabs button.is-active{ color:var(--ink); }
+.menu-tabs button.is-active::after{ transform:scaleX(1); }
+.menu-panel{ display:none; }
+.menu-panel.is-active{ display:block; }
+.menu-items{ display:grid; grid-template-columns:1fr 1fr; gap:2rem 3rem; }
+.menu-item{ display:flex; justify-content:space-between; gap:1.2rem; border-bottom:1px dotted var(--line-light); padding-bottom:1rem; }
+.menu-item__name{ font-family:var(--font-display); font-size:1.1rem; }
+.menu-item__desc{ color:var(--gray); font-size:.85rem; margin-top:.3rem; max-width:36ch; font-weight:300; }
+.menu-item__price{ font-family:var(--font-struct); color:var(--gold-dim); white-space:nowrap; font-size:.85rem; }
+@media (max-width:760px){ .menu-items{ grid-template-columns:1fr; } }
+
+/* ---------------- CONTACT ---------------- */
+.contact-info__item{ display:flex; gap:1.1rem; padding-block:1.2rem; border-top:1px solid var(--line-light); }
+.contact-info__item svg{ width:20px; height:20px; color:var(--gold); flex-shrink:0; margin-top:.2rem; }
+.contact-info__item h3{ font-family:var(--font-struct); font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:.4rem; color:var(--gray); }
+.contact-info__item p,.contact-info__item a{ color:var(--ink); font-size:.98rem; font-weight:300; }
+.contact-map{ position:relative; aspect-ratio:16/10; overflow:hidden; filter:grayscale(.55) contrast(1.05); }
+.contact-map iframe{ width:100%; height:100%; border:0; }
+
+/* ---------------- WEDDING: package badge ---------------- */
+.entry__badge{ display:inline-block; background:var(--gold); color:var(--black); font-family:var(--font-struct); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; padding:.35em 1em; margin-bottom:.9rem; }
+.entry__list{ display:flex; flex-direction:column; gap:.55rem; margin-top:1rem; }
+.entry__list li{ font-size:.85rem; display:flex; gap:.7rem; align-items:flex-start; color:var(--ink-soft); }
+.sheet--dark .entry__list li,.sheet--ink .entry__list li{ color:var(--text-ondark-muted); }
+.entry__list svg{ width:14px; height:14px; color:var(--gold); flex-shrink:0; margin-top:.2rem; }
+
+/* ---------------- ROOMS: amenity tags ---------------- */
+.tag-row{ display:flex; flex-wrap:wrap; gap:.5rem 1.3rem; margin-top:.8rem; }
+.tag-row li{ font-size:.82rem; color:var(--ink-soft); display:flex; align-items:center; gap:.5rem; }
+.sheet--dark .tag-row li{ color:var(--text-ondark-muted); }
+.tag-row li::before{ content:''; width:4px; height:4px; background:var(--gold); border-radius:50%; }
+
+/* ---------------- EVENTS: feature list icons ---------------- */
+.icon-row{ display:flex; gap:1rem; align-items:flex-start; padding-block:1.4rem; border-top:1px solid var(--line-light); }
+.icon-row svg{ width:22px; height:22px; color:var(--gold); flex-shrink:0; margin-top:.15rem; }
+.sheet--dark .icon-row{ border-color:var(--line-dark); }
+
+/* ---------------- 404 / empty ---------------- */
+.empty-state{ text-align:center; padding-block:var(--sp-7); }
