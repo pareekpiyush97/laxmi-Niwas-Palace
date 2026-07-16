@@ -203,8 +203,8 @@ body.is-introing{ overflow:hidden; height:100vh; height:100svh; }
    ============================================================ */
 .masthead{
   position:fixed; top:0; left:0; right:0; z-index:var(--z-header);
-  display:flex; align-items:center; justify-content:space-between;
-  padding:1.15rem var(--edge);
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+  padding:1rem var(--edge);
   color:var(--white);
   transition:padding .4s var(--ease);
 }
@@ -217,20 +217,26 @@ body.is-introing{ overflow:hidden; height:100vh; height:100svh; }
 .masthead::after{
   content:''; position:absolute; inset:0; z-index:-1;
   background:var(--black);
-  border-bottom:1px solid var(--line-dark);
+  border-bottom:1px solid rgba(182,135,78,.28);
   opacity:1; transition:opacity .4s;
   pointer-events:none;
 }
-.masthead.is-scrolled{ padding:.85rem var(--edge); }
+.masthead.is-scrolled{ padding:.7rem var(--edge); }
 .masthead.is-scrolled::before{ opacity:0; }
 .masthead.is-scrolled::after{ opacity:1; }
-.masthead__brand{ display:flex; align-items:center; gap:.65rem; }
-.masthead__logo{ height:2.15rem; width:auto; }
+.masthead__brand{
+  grid-column:2; display:flex; flex-direction:column; align-items:center; gap:.3rem;
+}
+.masthead__logo{
+  height:2.6rem; width:auto;
+  filter:drop-shadow(0 0 10px rgba(220,170,102,.28));
+}
 .masthead__word{
-  font-family:var(--font-display); font-size:1.2rem; font-weight:600; letter-spacing:.04em;
+  font-family:var(--font-display); font-size:1.05rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
   color:var(--white); text-shadow:0 1px 12px rgba(0,0,0,.45);
 }
 .masthead__menu-btn{
+  grid-column:3; justify-self:end;
   display:flex; align-items:center; gap:.9rem; color:var(--white);
   font-family:var(--font-struct); font-size:.8rem; font-weight:500; letter-spacing:.24em; text-transform:uppercase;
   text-shadow:0 1px 10px rgba(0,0,0,.45);
