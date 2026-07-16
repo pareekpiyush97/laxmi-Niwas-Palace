@@ -176,7 +176,9 @@ body.has-custom-cursor,body.has-custom-cursor a,body.has-custom-cursor button{ c
 .intro__brand{
   position:absolute; top:var(--sp-3); left:0; right:0; text-align:center;
   font-family:var(--font-display); font-size:1.05rem; color:var(--text-ondark-muted);
+  display:flex; align-items:center; justify-content:center; gap:.55rem;
 }
+.intro__logo{ height:1.7rem; width:auto; }
 .intro__bar{ position:absolute; left:0; bottom:0; height:2px; width:100%; background:rgba(247,245,240,.12); }
 /* progress via scaleX (compositor-only) — animating width re-runs layout every frame */
 .intro__bar span{ position:absolute; inset:0; width:100%; transform:scaleX(0); transform-origin:left; background:var(--gold-bright); }
@@ -473,6 +475,7 @@ body.is-introing{ overflow:hidden; height:100vh; height:100svh; }
 .site-footer{ background:var(--black); color:var(--text-ondark-muted); padding-top:var(--sp-5); }
 .footer__top{ display:grid; grid-template-columns:repeat(12,1fr); gap:var(--gap); padding-bottom:var(--sp-4); }
 .footer__brand{ grid-column:span 5; display:flex; flex-direction:column; gap:1.2rem; }
+.footer__logo{ height:3.6rem; width:auto; }
 .footer__wordmark{ font-family:var(--font-display); font-size:1.4rem; color:var(--white); }
 .footer__brand p{ font-weight:300; max-width:30ch; font-size:.92rem; }
 .footer__col{ grid-column:span 2; }
